@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC - Indian Railway Catering and Tourism Corporation | Official Website</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-train logo-icon"></i> IRCTC
+                        <span class="tagline">Indian Railway Catering and Tourism Corporation</span>
+                    </div>
+                </div>
+                <div class="header-top-right">
+                    <div class="header-top-links">
+                        <a href="#" id="loginBtn"><i class="fas fa-user"></i> LOGIN</a>
+                        <a href="#" id="registerBtn"><i class="fas fa-user-plus"></i> REGISTER</a>
+                        <a href="#" id="helpBtn"><i class="fas fa-question-circle"></i> HELP</a>
+                        <a href="#"><i class="fas fa-phone-alt"></i> 139</a>
+                    </div>
+                    <div class="language-selector">
+                        <select id="languageSelect">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                            <option value="ta">தமிழ்</option>
+                            <option value="te">తెలుగు</option>
+                            <option value="bn">বাংলা</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container">
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#hero" class="active"><i class="fas fa-ticket-alt"></i> BOOK TICKET</a>
+                    <a href="#trains"><i class="fas fa-train"></i> TRAINS</a>
+                    <a href="#vande-bharat"><i class="fas fa-bolt"></i> VANDE BHARAT</a>
+                    <a href="#services"><i class="fas fa-concierge-bell"></i> SERVICES</a>
+                    <a href="#holidays"><i class="fas fa-umbrella-beach"></i> HOLIDAYS</a>
+                    <a href="#info"><i class="fas fa-info-circle"></i> INFORMATION</a>
+                    <a href="#"><i class="fas fa-newspaper"></i> NEWS</a>
+                    <a href="#"><i class="fas fa-comments"></i> SUPPORT</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-container">
+            <div class="booking-panel">
+                <div class="form-tabs">
+                    <div class="tab active" data-tab="book"><i class="fas fa-ticket-alt"></i> BOOK TICKET</div>
+                    <div class="tab" data-tab="pnr"><i class="fas fa-search"></i> PNR STATUS</div>
+                    <div class="tab" data-tab="chart"><i class="fas fa-chart-bar"></i> CHARTS</div>
+                    <div class="tab" data-tab="cancel"><i class="fas fa-times-circle"></i> CANCEL TICKET</div>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Book Ticket Tab -->
+                    <div id="bookBox">
+                        <h2 class="form-title">Book Train Ticket</h2>
+                        
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="fromStation"><i class="fas fa-map-marker-alt"></i> From Station</label>
+                                <input type="text" id="fromStation" value="NEW DELHI (NDLS)" placeholder="Enter source station">
+                            </div>
+                            <div class="input-field">
+                                <label for="toStation"><i class="fas fa-map-marker-alt"></i> To Station</label>
+                                <input type="text" id="toStation" value="MUMBAI CENTRAL (BCT)" placeholder="Enter destination station">
+                            </div>
+                        </div>
+                        
+                        <div class="swap-stations">
+                            <div class="swap-btn" id="swapStationsBtn">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="journeyDate"><i class="far fa-calendar-alt"></i> Journey Date</label>
+                                <input type="date" id="journeyDate">
+                            </div>
+                            <div class="input-field">
+                                <label for="journeyClass"><i class="fas fa-chair"></i> Class</label>
+                                <select id="journeyClass">
+                                    <option value="all">All Classes</option>
+                                    <option value="1A">First AC (1A)</option>
+                                    <option value="2A">Second AC (2A)</option>
+                                    <option value="3A">Third AC (3A)</option>
+                                    <option value="SL" selected>Sleeper (SL)</option>
+                                    <option value="CC">AC Chair Car (CC)</option>
+                                    <option value="2S">Second Sitting (2S)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="quota"><i class="fas fa-tags"></i> Quota</label>
+                                <select id="quota">
+                                    <option value="GN" selected>General</option>
+                                    <option value="TQ">Tatkal</option>
+                                    <option value="PT">Premium Tatkal</option>
+                                    <option value="LD">Ladies</option>
+                                    <option value="DF">Defence</option>
+                                    <option value="PH">Physically Handicapped</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label for="passengers"><i class="fas fa-users"></i> Passengers</label>
+                                <select id="passengers">
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2" selected>2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                    <option value="5">5 Passengers</option>
+                                    <option value="6">6 Passengers</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-row">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="flexibleDate" checked>
+                                <label for="flexibleDate">Flexible Date</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="availableBerth" checked>
+                                <label for="availableBerth">Available Berth</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="trainType">
+                                <label for="trainType">Vande Bharat Only</label>
+                            </div>
+                        </div>
+                        
+                        <div class="button-row">
+                            <button class="btn btn-primary btn-search btn-icon" id="searchTrainsBtn">
+                                <i class="fas fa-search"></i> Search Trains
+                            </button>
+                            <button class="btn btn-secondary btn-disha btn-icon" id="askDishaBtn">
+                                <i class="fas fa-robot"></i> Ask DISHA
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PNR Status Tab -->
+                    <div id="pnrBox" style="display: none;">
+                        <h2 class="form-title">PNR Status</h2>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="pnrNumber"><i class="fas fa-ticket"></i> Enter 10-Digit PNR Number</label>
+                                <input type="text" id="pnrNumber" placeholder="Enter your PNR number" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="button-row">
+                            <button class="btn btn-primary btn-icon" id="checkPnrBtn">
+                                <i class="fas fa-check-circle"></i> Check PNR Status
+                            </button>
+                        </div>
+                        <div id="pnrResult" style="display: none; margin-top: 20px; padding: 15px; background-color: #e7f5e9; border-radius: var(--border-radius);">
+                            <h3 style="color: var(--success-green); margin-bottom: 10px;"><i class="fas fa-check-circle"></i> PNR Status: CONFIRMED</h3>
+                            <p><strong>Train:</strong> VANDE BHARAT EXPRESS (22435)</p>
+                            <p><strong>From:</strong> NEW DELHI (NDLS) <strong>To:</strong> MUMBAI CENTRAL (BCT)</p>
+                            <p><strong>Date:</strong> <span id="pnrDate"></span></p>
+                            <p><strong>Class:</strong> AC Chair Car (CC) | <strong>Coach:</strong> C3 | <strong>Seat:</strong> 45</p>
+                        </div>
+                    </div>
+
+                    <!-- Charts Tab -->
+                    <div id="chartBox" style="display: none;">
+                        <h2 class="form-title">Train Charts & Availability</h2>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="trainNumber"><i class="fas fa-train"></i> Train Number</label>
+                                <input type="text" id="trainNumber" placeholder="Enter train number">
+                            </div>
+                            <div class="input-field">
+                                <label for="chartDate"><i class="far fa-calendar-alt"></i> Journey Date</label>
+                                <input type="date" id="chartDate">
+                            </div>
+                        </div>
+                        <div class="button-row">
+                            <button class="btn btn-primary btn-icon" id="checkChartBtn">
+                                <i class="fas fa-chart-bar"></i> Check Availability
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cancel Ticket Tab -->
+                    <div id="cancelBox" style="display: none;">
+                        <h2 class="form-title">Cancel Ticket</h2>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="cancelPnr"><i class="fas fa-ticket"></i> PNR Number</label>
+                                <input type="text" id="cancelPnr" placeholder="Enter PNR to cancel">
+                            </div>
+                        </div>
+                        <div class="button-row">
+                            <button class="btn btn-danger btn-icon" id="cancelTicketBtn">
+                                <i class="fas fa-times-circle"></i> Cancel Ticket
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VANDE BHARAT HERO PANEL -->
+            <div class="vande-bharat-hero">
+                    <img src="images/vande-bharat-train.jpg" alt="Vande Bharat Express" class="vande-bharat-image" id="vandeBharatImage">                <div class="vande-bharat-overlay">
+                    <h2 class="vande-bharat-title">VANDE BHARAT EXPRESS</h2>
+                    <p class="vande-bharat-subtitle">India's Premier Semi-High Speed Train</p>
+                    <div class="vande-bharat-features">
+                        <div class="vande-bharat-feature">
+                            <i class="fas fa-bolt"></i> 180 km/h Max Speed
+                        </div>
+                        <div class="vande-bharat-feature">
+                            <i class="fas fa-shield-alt"></i> Enhanced Safety
+                        </div>
+                        <div class="vande-bharat-feature">
+                            <i class="fas fa-wifi"></i> Free WiFi
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-small mt-30" id="bookVandeBharatBtn">
+                        <i class="fas fa-ticket-alt"></i> Book Vande Bharat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VANDE BHARAT SECTION -->
+    <section class="vande-bharat-section" id="vande-bharat">
+        <div class="container">
+            <h2 class="section-title">Vande Bharat Express</h2>
+            <div class="vande-bharat-container">
+                <div class="vande-bharat-info">
+                    <p style="font-size: 18px; margin-bottom: 20px; opacity: 0.9;">
+                        Vande Bharat Express is India's first indigenously built semi-high speed train, offering world-class amenities and reduced travel time.
+                    </p>
+                    
+                    <div class="vande-bharat-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="vandeCount">50+</div>
+                            <div class="stat-label">Trains Operational</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">160+</div>
+                            <div class="stat-label">Destinations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">180</div>
+                            <div class="stat-label">Max Speed (km/h)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">96%</div>
+                            <div class="stat-label">Punctuality</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vande-bharat-features" style="margin-top: 20px;">
+                        <h3 style="margin-bottom: 15px; font-size: 20px;">Key Features:</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <i class="fas fa-check-circle" style="color: var(--light-orange); margin-right: 10px;"></i>
+                                Automatic doors with sliding footsteps
+                            </li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <i class="fas fa-check-circle" style="color: var(--light-orange); margin-right: 10px;"></i>
+                                On-board WiFi and infotainment system
+                            </li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <i class="fas fa-check-circle" style="color: var(--light-orange); margin-right: 10px;"></i>
+                                GPS-based passenger information system
+                            </li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <i class="fas fa-check-circle" style="color: var(--light-orange); margin-right: 10px;"></i>
+                                Bio-vacuum toilets and disability-friendly facilities
+                            </li>
+                            <li style="padding: 8px 0;">
+                                <i class="fas fa-check-circle" style="color: var(--light-orange); margin-right: 10px;"></i>
+                                Energy-efficient LED lighting
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn btn-primary mt-30" id="viewAllVandeBtn">
+                        <i class="fas fa-list"></i> View All Vande Bharat Routes
+                    </button>
+                </div>
+                
+                <div class="vande-bharat-image-container">
+                    <img src="images/vande-bharat-interior.jpg" alt="Vande Bharat Interior" class="vande-bharat-image-main">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE TRAIN STATUS WIDGET -->
+    <section class="section">
+        <div class="container">
+            <div class="live-status-widget">
+                <div class="live-status-header">
+                    <div class="live-status-title">
+                        <i class="fas fa-satellite-dish"></i> Live Train Status
+                    </div>
+                    <div class="live-status-indicator">
+                        <div class="live-dot"></div>
+                        <span>LIVE UPDATES</span>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="liveTrainNumber"><i class="fas fa-train"></i> Train Number</label>
+                        <input type="text" id="liveTrainNumber" placeholder="Enter train number" value="22435">
+                    </div>
+                    <div class="input-field">
+                        <label for="liveTrainDate"><i class="far fa-calendar-alt"></i> Journey Date</label>
+                        <input type="date" id="liveTrainDate">
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary btn-icon mb-20" id="checkLiveStatusBtn">
+                    <i class="fas fa-sync-alt"></i> Check Live Status
+                </button>
+                
+                <div id="liveStatusResult" style="display: none;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 15px;">
+                        <i class="fas fa-train"></i> VANDE BHARAT EXPRESS (22435)
+                    </h3>
+                    
+                    <div class="train-status-track">
+                        <div class="train-progress"></div>
+                        <div class="train-marker"></div>
+                    </div>
+                    
+                    <div class="train-stations">
+                        <div>NDLS<br><small>08:00 AM</small></div>
+                        <div>KOTA<br><small>02:15 PM</small></div>
+                        <div>BCT<br><small>08:30 PM</small></div>
+                    </div>
+                    
+                    <div class="train-details" style="margin-top: 20px;">
+                        <div class="train-detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Current Status: <strong class="train-running">RUNNING ON TIME</strong></span>
+                        </div>
+                        <div class="train-detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Last Station: <strong>KOTA (KOTA)</strong></span>
+                        </div>
+                        <div class="train-detail-item">
+                            <i class="fas fa-road"></i>
+                            <span>Distance Covered: <strong>450 km / 1384 km</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item" data-service="flights">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="service-title">Flights</h3>
+                    <p class="service-desc">Book domestic & international flights at best prices</p>
+                </div>
+                <div class="service-item" data-service="hotels">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="service-title">Hotels</h3>
+                    <p class="service-desc">Find & book hotels across India with special discounts</p>
+                </div>
+                <div class="service-item" data-service="bus">
+                    <div class="service-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3 class="service-title">Bus Tickets</h3>
+                    <p class="service-desc">Book bus tickets for various routes across India</p>
+                </div>
+                <div class="service-item" data-service="catering">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="service-title">E-Catering</h3>
+                    <p class="service-desc">Order food to be delivered at your seat during journey</p>
+                </div>
+                <div class="service-item" data-service="tourist">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="service-title">Tourist Packages</h3>
+                    <p class="service-desc">Curated holiday packages for domestic & international destinations</p>
+                </div>
+                <div class="service-item" data-service="retiring">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3 class="service-title">Retiring Rooms</h3>
+                    <p class="service-desc">Book retiring rooms at railway stations for short stays</p>
+                </div>
+                <div class="service-item" data-service="insurance">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Travel Insurance</h3>
+                    <p class="service-desc">Comprehensive travel insurance for your journey</p>
+                </div>
+                <div class="service-item" data-service="smartcard">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="service-title">IRCTC Smart Card</h3>
+                    <p class="service-desc">Prepaid card for seamless booking & payments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINS & SCHEDULES SECTION -->
+    <section class="trains-section" id="trains">
+        <div class="container">
+            <h2 class="section-title">Popular Trains & Schedules</h2>
+            
+            <div class="trains-tabs">
+                <div class="trains-tab active" data-train-type="all">All Trains</div>
+                <div class="trains-tab" data-train-type="vande">Vande Bharat</div>
+                <div class="trains-tab" data-train-type="rajdhani">Rajdhani Express</div>
+                <div class="trains-tab" data-train-type="shatabdi">Shatabdi Express</div>
+                <div class="trains-tab" data-train-type="duronto">Duronto Express</div>
+            </div>
+            
+            <div class="trains-grid" id="trainsGrid">
+                <!-- Train cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- HOLIDAYS SECTION -->
+    <section class="holidays-section" id="holidays">
+        <div class="container">
+            <h2 class="section-title">Holiday Packages</h2>
+            
+            <div class="holidays-grid">
+                <div class="holiday-card">
+                    <div class="card-image" style="background-image: url('images/international-tours.jpg');">                                               
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">International Tours</h3>
+                        <p class="card-desc">Explore Dubai, Singapore, Thailand, Europe and more with exclusive packages including flights, hotels and sightseeing.</p>
+                        <div class="card-features">
+                            <span class="card-feature">7-14 Days</span>
+                            <span class="card-feature">All Inclusive</span>
+                            <span class="card-feature">Guided Tours</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">₹89,999<span>/person</span></div>
+                            <button class="btn btn-primary btn-small">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="holiday-card">
+                    <div class="card-image" style="background-image: url('images/hill-stations.jpg');">
+                        <div class="card-badge">LIMITED OFFER</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Hill Stations of India</h3>
+                        <p class="card-desc">Experience the serenity of Shimla, Manali, Darjeeling, Ooty and more with train travel and luxury stays.</p>
+                        <div class="card-features">
+                            <span class="card-feature">5-10 Days</span>
+                            <span class="card-feature">Scenic Routes</span>
+                            <span class="card-feature">Luxury Stays</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">₹24,999<span>/person</span></div>
+                            <button class="btn btn-primary btn-small">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="holiday-card">
+                    <div class="card-image" style="background-image: url('images/pilgrimage-tours.jpg');">  
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Pilgrimage Tours</h3>
+                        <p class="card-desc">Spiritual journeys to Tirupati, Varanasi, Amritsar, Puri and other sacred destinations with comfortable travel.</p>
+                        <div class="card-features">
+                            <span class="card-feature">3-7 Days</span>
+                            <span class="card-feature">Temple Visits</span>
+                            <span class="card-feature">Vegetarian Meals</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">₹12,999<span>/person</span></div>
+                            <button class="btn btn-primary btn-small">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info-section" id="info">
+        <div class="container">
+            <h2 class="section-title text-center">Important Information</h2>
+            
+            <div class="info-grid">
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="info-box-title">Safety Measures</h3>
+                    <p class="info-box-desc">Learn about the safety protocols, emergency contacts, and travel guidelines for a secure journey.</p>
+                    <button class="btn btn-outline btn-small">Learn More</button>
+                </div>
+                
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="info-box-title">Tatkal Booking</h3>
+                    <p class="info-box-desc">Book Tatkal tickets one day in advance. Tatkal booking opens at 10:00 AM for AC classes and 11:00 AM for non-AC classes.</p>
+                    <button class="btn btn-outline btn-small">Tatkal Rules</button>
+                </div>
+                
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3 class="info-box-title">Accessibility</h3>
+                    <p class="info-box-desc">Information on facilities for differently-abled passengers, including wheelchair assistance and reserved quotas.</p>
+                    <button class="btn btn-outline btn-small">Accessibility Info</button>
+                </div>
+                
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3 class="info-box-title">Luggage Rules</h3>
+                    <p class="info-box-desc">Know about permitted luggage dimensions, weight limits, and prohibited items before you travel.</p>
+                    <button class="btn btn-outline btn-small">Luggage Policy</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#hero"><i class="fas fa-chevron-right"></i> Book Tickets</a>
+                        <a href="#trains"><i class="fas fa-chevron-right"></i> Train Schedule</a>
+                        <a href="#pnrBox"><i class="fas fa-chevron-right"></i> PNR Status</a>
+                        <a href="#chartBox"><i class="fas fa-chevron-right"></i> Charts / Availability</a>
+                        <a href="#cancelBox"><i class="fas fa-chevron-right"></i> Cancel Ticket</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Information</h3>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-chevron-right"></i> About IRCTC</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Train Fare & Rules</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Refund Rules</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Travel Insurance</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> FAQs</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Other Services</h3>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-chevron-right"></i> Flight Booking</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Hotel Booking</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Bus Booking</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Holiday Packages</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> E-Catering</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Connect With Us</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    
+                    <div class="footer-links mt-30">
+                        <a href="#"><i class="fas fa-phone-alt"></i> Customer Care: 139</a>
+                        <a href="#"><i class="fas fa-envelope"></i> care@irctc.co.in</a>
+                        <a href="#"><i class="fas fa-download"></i> IRCTC Rail Connect App</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Accessibility Statement</a>
+                </div>
+                <p>© 2024 IRCTC – Indian Railway Catering and Tourism Corporation Ltd. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">This is a frontend demonstration project only. Not the official IRCTC website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="fas fa-user"></i> IRCTC Login</h3>
+                <span class="modal-close" id="closeLoginModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="input-field mb-20">
+                    <label for="loginUsername">User ID / Mobile Number</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your user ID or mobile">
+                </div>
+                <div class="input-field mb-20">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <div class="checkbox-item mb-20">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+                <button class="btn btn-primary w-100 mb-20" id="submitLogin">Login</button>
+                <div class="text-center">
+                    <a href="#" style="color: var(--primary-blue);">Forgot Password?</a>
+                    <p style="margin-top: 15px;">Don't have an account? <a href="#" style="color: var(--accent-orange); font-weight: 600;" id="showRegisterModal">Register here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+</body>
+</html>
